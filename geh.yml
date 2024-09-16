@@ -1,0 +1,9 @@
+- name: Instalar curl
+  hosts: all
+  become: yes
+  tasks:
+    - name: Instalar apache no Debian/Ubuntu
+      apt:
+        name: apache2
+        state: present
+      when: ansible_os_family == "Debian"
